@@ -1,17 +1,17 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import AnimatedLottieView from 'lottie-react-native';
-import {Dimensions, Image, Text, TouchableOpacity, View} from 'react-native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import { Dimensions, Image, Text, TouchableOpacity, View } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Video from 'react-native-video';
-import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
+import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 
 import styles from './DiscoverComponents.style';
 
-const Reel = ({item}) => {
+const Reel = ({ item }) => {
   const ref = useRef(null);
 
   const bottomTabBarHeight = useBottomTabBarHeight();
@@ -31,7 +31,7 @@ const Reel = ({item}) => {
         source={item.video}
         resizeMode="cover"
         repeat={true}
-        style={{...styles.video, height: height}}
+        style={{ ...styles.video, height: height }}
         muted={true}
       />
 
@@ -48,7 +48,7 @@ const Reel = ({item}) => {
     </View>
   );
 };
-const Right = ({item}) => {
+const Right = ({ item }) => {
   const [like, setLike] = useState(item.islike);
 
   return (
@@ -75,10 +75,10 @@ const Right = ({item}) => {
   );
 };
 
-const Left = ({item}) => {
+const Left = ({ item }) => {
   const [follow, setFollow] = useState(item.follow);
   return (
-    <View style={{zIndex: 1, justifyContent: 'flex-end'}}>
+    <View style={{ zIndex: 1, justifyContent: 'flex-end' }}>
       <View style={styles.footer}>
         <Image style={styles.image} source={item.image} />
         <Text style={styles.user}>{item.user}</Text>
@@ -95,7 +95,7 @@ const Left = ({item}) => {
             marginLeft: 10,
           }}>
           <Text style={styles.buttonText}>
-            {follow ? 'Takip Et ' : 'Takip'}
+            {follow ? 'Theo dõi ' : 'Takip'}
           </Text>
         </TouchableOpacity>
       </View>
@@ -106,7 +106,7 @@ const Left = ({item}) => {
         <AnimatedLottieView
           source={require('../../../assets/images/sound.json')}
           autoPlay
-          style={{width: 24, height: 24}}
+          style={{ width: 24, height: 24 }}
         />
         <Text style={styles.soundText}>{item.user}</Text>
         <Entypo name="dot-single" size={15} color="white" />

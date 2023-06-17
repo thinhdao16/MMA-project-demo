@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import {
   Image,
   SafeAreaView,
@@ -12,7 +12,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 const ProfilBar = () => {
   const bottomSheet = useRef();
@@ -26,7 +26,7 @@ const ProfilBar = () => {
         <Text style={styles.header}>ezgiceylan</Text>
         <Image
           source={require('../../../assets/images/down.png')}
-          style={{width: 18, height: 18}}
+          style={{ width: 18, height: 18 }}
         />
       </View>
 
@@ -36,7 +36,7 @@ const ProfilBar = () => {
             name="plus-square-o"
             size={28}
             color="white"
-            style={{marginRight: 10}}
+            style={{ marginRight: 10 }}
           />
         </TouchableOpacity>
         <BottomSheet
@@ -44,22 +44,22 @@ const ProfilBar = () => {
           ref={bottomSheet2}
           height={450}
           sheetBackgroundColor="#262626">
-          <View style={{alignItems: 'center', marginTop: 15}}>
-            <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>
-              Oluştur
+          <View style={{ alignItems: 'center', marginTop: 15 }}>
+            <Text style={{ color: 'white', fontSize: 18, fontWeight: 'bold' }}>
+              Tạo
             </Text>
           </View>
           <View style={styles.line} />
 
-          <View style={{marginLeft: 15, marginTop: 15}}>
+          <View style={{ marginLeft: 15, marginTop: 15 }}>
             <View style={styles.sheet2}>
               <Image source={require('../../../assets/images/video.png')} />
-              <Text style={styles.label}>Reels Videosu</Text>
+              <Text style={styles.label}>Thước phim</Text>
             </View>
 
             <View style={styles.sheet2}>
               <Image source={require('../../../assets/images/grid.png')} />
-              <Text style={styles.label}>Gönderi</Text>
+              <Text style={styles.label}>Bài viết</Text>
             </View>
 
             <View style={styles.sheet2}>
@@ -67,14 +67,14 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/stories.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Hikaye</Text>
+              <Text style={styles.label}>Tin</Text>
             </View>
             <View style={styles.sheet2}>
               <Image
                 source={require('../../../assets/images/highlight-story.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}> Öne Çıkan Hikaye</Text>
+              <Text style={styles.label}>Tin nổi bật</Text>
             </View>
 
             <View style={styles.sheet2}>
@@ -82,7 +82,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/live.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}> Canlı</Text>
+              <Text style={styles.label}> Trực tiếp</Text>
             </View>
 
             <View style={styles.sheet2}>
@@ -90,7 +90,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/book.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}> Rehber</Text>
+              <Text style={styles.label}> Hướng dẫn</Text>
             </View>
           </View>
         </BottomSheet>
@@ -100,7 +100,7 @@ const ProfilBar = () => {
           ref={bottomSheet}
           height={400}
           sheetBackgroundColor="#262626">
-          <View style={{marginTop: 15, marginLeft: 5}}>
+          <View style={{ marginTop: 15, marginLeft: 5 }}>
             <TouchableOpacity
               style={styles.sheet}
               onPress={() => {
@@ -108,7 +108,7 @@ const ProfilBar = () => {
                 bottomSheet.current.close();
               }}>
               <Ionicons name="settings-sharp" size={28} color="white" />
-              <Text style={styles.label}>Ayarlar</Text>
+              <Text style={styles.label}>Cài đặt</Text>
             </TouchableOpacity>
 
             <View style={styles.sheet}>
@@ -116,7 +116,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/timer.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Hareketlerin</Text>
+              <Text style={styles.label}>Hoạt động của bạn</Text>
             </View>
 
             <View style={styles.sheet}>
@@ -124,7 +124,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/time.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>Arşiv</Text>
+              <Text style={styles.label}>Kho lưu trữ</Text>
             </View>
 
             <View style={styles.sheet}>
@@ -132,17 +132,17 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/qr-code.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>QR Kodu</Text>
+              <Text style={styles.label}>Mã QR</Text>
             </View>
 
             <View style={styles.sheet}>
               <Feather name="bookmark" size={28} color="white" />
-              <Text style={styles.label}>Kaydedilenler</Text>
+              <Text style={styles.label}>Đã lưu</Text>
             </View>
 
             <View style={styles.sheet}>
               <AntDesign name="bars" size={28} color="white" />
-              <Text style={styles.label}>Yakın Arkadaşlar</Text>
+              <Text style={styles.label}>Bạn thân</Text>
             </View>
 
             <View style={styles.sheet}>
@@ -150,7 +150,7 @@ const ProfilBar = () => {
                 source={require('../../../assets/images/heart.png')}
                 style={styles.icon}
               />
-              <Text style={styles.label}>COVID-19 Bilgi Merkezi</Text>
+              <Text style={styles.label}>Trung tâm Thông tin</Text>
             </View>
           </View>
         </BottomSheet>

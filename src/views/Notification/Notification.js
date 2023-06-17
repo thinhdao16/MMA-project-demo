@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   ScrollView,
@@ -8,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import Container from '../../components/Container/Container';
 import notification from '../../storage/database/notification';
@@ -50,7 +50,7 @@ const Notification = () => {
   );
 
   return (
-    <Container insets={{top: true}}>
+    <Container insets={{ top: true }}>
       <Header />
       <ScrollView>
         <View>
@@ -76,7 +76,7 @@ const Notification = () => {
                     </Text>
                   </View>
 
-                  <View style={{alignContent: 'center'}}>
+                  <View style={{ alignContent: 'center' }}>
                     <TouchableOpacity
                       activeOpacity={0.7}
                       style={{
@@ -94,7 +94,7 @@ const Notification = () => {
                       {checkFollow(follow, data.user) ? (
                         <Text style={styles.butonText}>Takiptesin</Text>
                       ) : (
-                        <Text style={styles.butonText}>Takip Et</Text>
+                        <Text style={styles.butonText}>Theo dõi</Text>
                       )}
                     </TouchableOpacity>
                   </View>
@@ -115,14 +115,14 @@ const Notification = () => {
               style={styles.image}
               source={require('../../storage/images/tag2.jpg')}
             />
-            <View style={{marginLeft: 15}}>
+            <View style={{ marginLeft: 15 }}>
               <Text style={styles.user}>
                 gozde <Text style={styles.message}>hikayeni beğendi · 3h</Text>
               </Text>
             </View>
           </View>
 
-          <View style={{alignItems: 'center'}}>
+          <View style={{ alignItems: 'center' }}>
             <Image
               style={styles.story}
               source={require('../../storage/images/profil.jpg')}

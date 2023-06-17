@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
-import React, {useState} from 'react';
-import {Alert, Image, Text, TouchableOpacity, View} from 'react-native';
-import {Linking} from 'react-native';
-import {TextInput} from 'react-native-paper';
+import React, { useState } from 'react';
+import { Alert, Image, Text, TouchableOpacity, View } from 'react-native';
+import { Linking } from 'react-native';
+import { TextInput } from 'react-native-paper';
 
 import Container from '../../components/Container/Container';
 import Content from '../../components/Content/Content';
@@ -12,24 +12,24 @@ import styles from './Login.styles';
 const trueEmail = 'E';
 const truePassword = '1';
 
-const Login = ({navigation}) => {
+const Login = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(true);
 
   const [name, setName] = useState(null);
   const [password, setPassword] = useState(null);
 
   return (
-    <Container insets={{top: true, bottom: true}}>
+    <Container insets={{ top: true, bottom: true }}>
       <Content>
-        <View style={{flex: 1}}>
+        <View style={{ flex: 1 }}>
           <View style={styles.topContainer}>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
-              <Text style={{color: 'white', opacity: 0.6, fontSize: 14}}>
-                Türkçe(Türkiye)
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Text style={{ color: 'white', opacity: 0.6, fontSize: 14 }}>
+                Ngôn ngữ (Tiếng việt)
               </Text>
               <Image
                 source={require('../../../assets/images/down.png')}
-                style={{width: 12, height: 12}}
+                style={{ width: 12, height: 12 }}
               />
             </View>
             <Image
@@ -40,8 +40,8 @@ const Login = ({navigation}) => {
 
           <View style={styles.keyboardView}>
             <TextInput
-              theme={{colors: {text: 'white'}}}
-              placeholder="Telefon numarası, e-posta adresi veya kullanıcı adı"
+              theme={{ colors: { text: 'white' } }}
+              placeholder="Phone number, username, or email"
               onChangeText={item => setName(item)}
               placeholderTextColor="grey"
               selectionColor="grey"
@@ -51,8 +51,8 @@ const Login = ({navigation}) => {
             />
 
             <TextInput
-              theme={{colors: {text: 'white'}}}
-              placeholder="Şifre"
+              theme={{ colors: { text: 'white' } }}
+              placeholder="Password"
               placeholderTextColor="grey"
               onChangeText={itemP => setPassword(itemP)}
               style={styles.textInput}
@@ -73,27 +73,27 @@ const Login = ({navigation}) => {
               onPress={() => {
                 trueEmail === name && truePassword === password
                   ? navigation.reset({
-                      index: 0,
-                      routes: [{name: 'BottomTab'}],
-                    })
+                    index: 0,
+                    routes: [{ name: 'BottomTab' }],
+                  })
                   : Alert.alert('Hatalı şifre veya kullanıcı adı');
               }}
               style={styles.login}
               disabled={name === null && password === null ? true : false}>
-              <Text style={styles.loginText}>Giriş yap</Text>
+              <Text style={styles.loginText}>Log In</Text>
             </TouchableOpacity>
 
-            <View style={{alignItems: 'center', padding: 10}}>
+            <View style={{ alignItems: 'center', padding: 10 }}>
               <View style={styles.text}>
-                <Text style={{fontSize: 12, color: 'grey'}}>
-                  Giriş detaylarını mı unuttun?{' '}
+                <Text style={{ fontSize: 12, color: 'grey' }}>
+                  Forgot your login details?{' '}
                 </Text>
-                <Text style={styles.help}> Giriş yapmak için yardım al.</Text>
+                <Text style={styles.help}> Get help sigining in.</Text>
               </View>
 
               <View style={styles.seperatorStyle}>
                 <View style={styles.seperator} />
-                <Text style={{color: 'grey'}}> YA DA </Text>
+                <Text style={{ color: 'grey' }}> OR </Text>
                 <View style={styles.seperator} />
               </View>
 
@@ -105,7 +105,7 @@ const Login = ({navigation}) => {
                   onPress={() => {
                     Linking.openURL('https://www.facebook.com/login/');
                   }}>
-                  <Text style={styles.faceText}>Facebook ile Giriş Yap</Text>
+                  <Text style={styles.faceText}>Log In With Facebook </Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -113,11 +113,11 @@ const Login = ({navigation}) => {
 
           <View style={styles.bottomContainer}>
             <View style={styles.bottom}>
-              <View style={{flexDirection: 'row'}}>
-                <Text style={{fontSize: 12, color: 'grey', marginTop: 15}}>
-                  Hesabın yok mu?{' '}
+              <View style={{ flexDirection: 'row' }}>
+                <Text style={{ fontSize: 12, color: 'grey', marginTop: 15 }}>
+                  Don't have an account?{' '}
                 </Text>
-                <Text style={{...styles.help, marginTop: 15}}> Kaydol.</Text>
+                <Text style={{ ...styles.help, marginTop: 15 }}> Sign Up.</Text>
               </View>
 
               <View style={styles.line} />
