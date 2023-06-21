@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import {
   Dimensions,
   Image,
@@ -17,7 +17,7 @@ import store from '../../storage/database/store';
 
 import styles from './Store.style';
 
-const {width} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 const TopLabel = () => {
   const bottomSheet = useRef();
@@ -25,7 +25,7 @@ const TopLabel = () => {
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.label}>Mağaza</Text>
+        <Text style={styles.label}>Reels</Text>
       </View>
       <View style={styles.right}>
         <Image source={require('../../../assets/images/calendar.png')} />
@@ -35,17 +35,17 @@ const TopLabel = () => {
           ref={bottomSheet}
           height={250}
           sheetBackgroundColor="#262626">
-          <View style={{backgroundColor: 'black', flex: 1, marginTop: 10}}>
-            <Text style={styles.labelText}>Hesabın</Text>
+          <View style={{ backgroundColor: 'black', flex: 1, marginTop: 10 }}>
+            <Text style={styles.labelText}>Tài khoản của bạn</Text>
             <View style={styles.containerText}>
               <Ionicons name="notifications-outline" size={24} color="white" />
               <TouchableOpacity>
-                <Text style={styles.text2}>Alışveriş hareketleri</Text>
+                <Text style={styles.text2}>Thông báo</Text>
               </TouchableOpacity>
             </View>
             <View style={styles.line} />
-            <Text style={styles.labelText}>Instagram Mağazası</Text>
-            <Text style={styles.labelText}>Videolar</Text>
+            <Text style={styles.labelText}>Cửa hàng Instagram</Text>
+            <Text style={styles.labelText}>Video</Text>
           </View>
         </BottomSheet>
 
@@ -59,12 +59,12 @@ const TopLabel = () => {
 
 const Store = () => {
   return (
-    <Container insets={{top: true}}>
+    <Container insets={{ top: true }}>
       <TopLabel />
       <SearchBar placeHolders={true} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <TouchableOpacity style={styles.videos}>
-          <Text style={styles.videosText}>Videolar</Text>
+          <Text style={styles.videosText}>Video</Text>
         </TouchableOpacity>
         <View>
           <View

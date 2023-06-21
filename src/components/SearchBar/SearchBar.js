@@ -1,14 +1,14 @@
 import React from 'react';
-import {SafeAreaView, TextInput, View} from 'react-native';
+import { SafeAreaView, TextInput, View } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
 
 import styles from './SearchBar.style';
-const SearchBar = ({ıconColor, placeHolders}) => {
+const SearchBar = ({ ıconColor, placeHolders }) => {
   return (
     <SafeAreaView>
       <View>
         <TextInput
-          placeholder={placeHolders ? 'Arama' : 'Ara'}
+          placeholder={placeHolders ? 'Tìm kiếm' : 'Tìm kiếm'}
           placeholderTextColor="grey"
           style={styles.input}
         />

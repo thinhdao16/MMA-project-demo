@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Image,
   ScrollView,
@@ -15,22 +15,22 @@ import Container from '../../components/Container/Container';
 import data from '../../storage/database/comment';
 
 import styles from './Comment.style';
-const Comment = ({navigation, route}) => {
+const Comment = ({ navigation, route }) => {
   const [commentText, setCommentText] = useState('');
 
   return (
-    <Container insets={{top: true, bottom: true}}>
-      <View style={{justifyContent: 'space-between', flex: 1}}>
+    <Container insets={{ top: true, bottom: true }}>
+      <View style={{ justifyContent: 'space-between', flex: 1 }}>
         <View style={styles.topContainer}>
           <View style={styles.top}>
             <View style={styles.left}>
               <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Ionicons name="chevron-back" size={28} color="white" />
               </TouchableOpacity>
-              <Text style={styles.label}> Yorumlar</Text>
+              <Text style={styles.label}> Bình luận</Text>
             </View>
 
-            <View style={{justifyContent: 'center', marginRight: 20}}>
+            <View style={{ justifyContent: 'center', marginRight: 20 }}>
               <Feather name="send" size={24} color="white" />
             </View>
           </View>
@@ -38,11 +38,11 @@ const Comment = ({navigation, route}) => {
           <ScrollView>
             <View style={styles.topComment}>
               <Image style={styles.image} source={route.params.image} />
-              <View style={{marginLeft: 10}}>
-                <Text style={{color: 'white', fontWeight: 'bold'}}>
+              <View style={{ marginLeft: 10 }}>
+                <Text style={{ color: 'white', fontWeight: 'bold' }}>
                   {route.params.user}
                 </Text>
-                <Text style={{color: 'white', marginTop: 7}}>
+                <Text style={{ color: 'white', marginTop: 7 }}>
                   {route.params.explanation}
                 </Text>
               </View>
@@ -59,7 +59,7 @@ const Comment = ({navigation, route}) => {
                   }}>
                   <View style={styles.comment}>
                     <Image style={styles.images} source={data.image} />
-                    <View style={{marginLeft: 10}}>
+                    <View style={{ marginLeft: 10 }}>
                       <Text
                         style={{
                           color: 'white',
@@ -69,12 +69,12 @@ const Comment = ({navigation, route}) => {
                         {data.user}
                       </Text>
                       <Text
-                        style={{color: 'white', marginTop: 5, fontSize: 15}}>
+                        style={{ color: 'white', marginTop: 5, fontSize: 15 }}>
                         {data.comment}
                       </Text>
-                      <View style={{flexDirection: 'row', marginTop: 5}}>
-                        <Text style={styles.answer}>Yanıtla</Text>
-                        <Text style={styles.answer}>Gönder</Text>
+                      <View style={{ flexDirection: 'row', marginTop: 5 }}>
+                        <Text style={styles.answer}>Trả lời</Text>
+                        <Text style={styles.answer}>Gửi</Text>
                       </View>
                     </View>
                   </View>
@@ -94,7 +94,7 @@ const Comment = ({navigation, route}) => {
         </View>
 
         <View style={styles.bottom}>
-          <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Image
               style={styles.image}
               source={require('../../../assets/images/profil.jpg')}
@@ -110,9 +110,9 @@ const Comment = ({navigation, route}) => {
 
           <View>
             {!commentText.length ? (
-              <Text style={{color: '#254253', marginRight: 15}}>Paylaş</Text>
+              <Text style={{ color: '#254253', marginRight: 15 }}>Paylaş</Text>
             ) : (
-              <Text style={{color: '#0096fd', marginRight: 15}}>Paylaş</Text>
+              <Text style={{ color: '#0096fd', marginRight: 15 }}>Paylaş</Text>
             )}
           </View>
         </View>

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, { useRef, useState } from 'react';
 import {
   FlatList,
   Image,
@@ -11,7 +11,7 @@ import BottomSheet from 'react-native-gesture-bottom-sheet';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import send from '../../storage/database/message';
 import data from '../../storage/database/post';
@@ -26,14 +26,14 @@ const Post = () => {
     return currentLike.find(item => item === postName);
   }, []);
 
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     return (
       <View>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Image source={item.image} style={styles.sheetImage} />
           <View>
             <Text style={styles.sheetLabel}>{item.user}</Text>
-            <Text style={{color: '#a2a2a2'}}>{item.username}</Text>
+            <Text style={{ color: '#a2a2a2' }}>{item.username}</Text>
           </View>
         </View>
       </View>
@@ -58,19 +58,19 @@ const Post = () => {
     <View style={styles.line}>
       {data.map((data, index) => {
         return (
-          <View key={index} style={{marginBottom: 10}}>
+          <View key={index} style={{ marginBottom: 10 }}>
             <View style={styles.top}>
               <View style={styles.topleft}>
                 <Image source={data.image} style={styles.profilImage} />
                 <Text style={styles.title}>{data.postName}</Text>
               </View>
 
-              <TouchableOpacity style={{alignSelf: 'center', marginRight: 15}}>
+              <TouchableOpacity style={{ alignSelf: 'center', marginRight: 15 }}>
                 <Feather name="more-vertical" size={20} color="#F5F5F5" />
               </TouchableOpacity>
             </View>
 
-            <View style={{height: 400}}>
+            <View style={{ height: 400 }}>
               <Image source={data.postImage} style={styles.ımage} />
             </View>
 
@@ -110,7 +110,7 @@ const Post = () => {
                 <View>
                   <View>
                     <TextInput
-                      placeholder="Ara"
+                      placeholder="Tìm kiếm"
                       placeholderTextColor={'#a7a7a7'}
                       style={styles.input}
                     />
@@ -132,16 +132,16 @@ const Post = () => {
                         flexDirection: 'row',
                       }}>
                       <View
-                        style={{flexDirection: 'row', alignItems: 'center'}}>
+                        style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Image
                           style={styles.sheetImage}
                           source={require('../../../assets/images/profil.jpg')}
                         />
                         <Text style={styles.sheetLabel}>
-                          Hikayene gönderi ekle
+                          Thêm bài viết vào tin của bạn
                         </Text>
                       </View>
-                      <View style={{justifyContent: 'center'}}>
+                      <View style={{ justifyContent: 'center' }}>
                         <AntDesign
                           name="right"
                           size={18}
@@ -164,19 +164,19 @@ const Post = () => {
                   </View>
                 </View>
               </BottomSheet>
-              <View style={{marginRight: 20}}>
+              <View style={{ marginRight: 20 }}>
                 <FontAwesome name="bookmark-o" size={24} color="white" />
               </View>
             </View>
 
             <Text style={styles.likeText}>
               {checkLike(like, data.postName) ? data.like + 1 : data.like}{' '}
-              beğenme
+              lượt thích
             </Text>
 
-            <View style={{flexDirection: 'row', marginTop: 5}}>
+            <View style={{ flexDirection: 'row', marginTop: 5 }}>
               <Text style={styles.postName}>{data.postName}</Text>
-              <Text style={{color: 'white', marginTop: 2}}>
+              <Text style={{ color: 'white', marginTop: 2 }}>
                 {' '}
                 {data.explanation}
               </Text>
@@ -194,7 +194,7 @@ const Post = () => {
                 source={require('../../../assets/images/profil.jpg')}
                 style={styles.profilImage}
               />
-              <Text style={{opacity: 0.8, color: 'grey'}}>Yorum ekle...</Text>
+              <Text style={{ opacity: 0.8, color: 'grey' }}>Thêm bình luận...</Text>
             </View>
 
             <Text style={styles.time}>{data.time}</Text>
